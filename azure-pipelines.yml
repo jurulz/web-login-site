@@ -37,3 +37,8 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+    - task: AzureKeyVault@1
+      inputs:
+        azureSubscription: 'Azure subscription 1(71286165-df79-4e37-ba75-d19cb709d677)'
+        KeyVaultName: 'JuKeyvault'
+        SecretsFilter: '*'
